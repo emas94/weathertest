@@ -1,4 +1,7 @@
 import React, { Component } from "react"
+import { BrowserRouter, Link, NavLink, Route } from "react-router-dom"
+import "./Header.css"
+
 class Navbar extends Component {
   state = {
     isActive: false
@@ -21,6 +24,7 @@ class Navbar extends Component {
       })
     }
   }
+
   render() {
     return (
       <>
@@ -29,14 +33,20 @@ class Navbar extends Component {
             <span className="hamburger__inner"></span>
           </span>
         </button>
-        <div className="navigation">
-          <ul className="navigation__list">
-            <li className="navigation__item">About me</li>
-            <li className="navigation__item">Portfolio</li>
-            <li className="navigation__item">References</li>
-            <li className="navigation__item">Contact</li>
-          </ul>
-        </div>
+        <BrowserRouter>
+          <div className="navigation">
+            <ul className="navigation__list">
+              <li className="navigation__item">
+                <Link to="/">Home</Link>
+              </li>
+              <li className="navigation__item">
+                <Link to="/blog">Blog</Link>
+              </li>
+              <li className="navigation__item">References</li>
+              <li className="navigation__item">Contact</li>
+            </ul>
+          </div>
+        </BrowserRouter>
       </>
     )
   }

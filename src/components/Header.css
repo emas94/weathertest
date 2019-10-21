@@ -103,6 +103,11 @@
 
 .navigation__item {
   margin-left: 20px;
+  text-decoration: none;
+}
+.navigation__item a {
+  text-decoration: none;
+  color: white;
 }
 
 .home {
@@ -170,13 +175,22 @@
 
 .home__logo {
   z-index: 0;
-  background-color: transparent;
 }
 
 .home__logo img {
   z-index: 0;
+  animation: home_logo 3s both linear;
 }
-
+@keyframes home_logo {
+  0% {
+    transform: translateY(-500px) scale(0.2) rotate(180deg);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
 .home__name {
   grid-column: 2/8;
   grid-row: 1/1;
@@ -337,10 +351,12 @@
   }
   .navigation__item {
     margin: 0 0 10px 0;
+    text-decoration: none;
   }
   .navigation--active {
     transform: translateY(0);
   }
+
   .home {
     grid-template-columns: repeat(6, 2fr);
     grid-template-rows: repeat(6, 2fr);

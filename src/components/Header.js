@@ -100,7 +100,7 @@ class Header extends Component {
             {weathers}
           </div>
         </div>
-        <div className="home__bg"></div>
+        {/* <div className="home__bg"></div> */}
         <div className="home__arrow">
           <i className="fas fa-arrow-down"></i>
         </div>
