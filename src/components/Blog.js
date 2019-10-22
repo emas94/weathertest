@@ -1,7 +1,33 @@
-import React, { Component } from "react"
+import React, { Component, useState } from "react"
+// import { getFirebase } from "../firebase"
 
 import "./Blog.css"
 
+// const [loading, setLoading] = useState(true)
+// const [blogPosts, setBlogPosts] = useState([])
+
+// if (loading && !blogPosts.length) {
+//   getFirebase()
+//     .database()
+//     .ref("/posts")
+//     .orderByChild("date")
+//     .once("value")
+//     .then(snapshot => {
+//       let posts = []
+//       const snapshotVal = snapshot.val()
+//       for (let title in snapshotVal) {
+//         posts.push(snapshotVal[title])
+//       }
+
+//       const newestFirst = posts.reverse()
+//       setBlogPosts(newestFirst)
+//       setLoading(false)
+//     })
+// }
+
+// if (loading) {
+//   return <h1>Loading...</h1>
+// }
 class Blog extends Component {
   state = {
     posts: [
