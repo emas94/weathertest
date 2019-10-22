@@ -1,7 +1,6 @@
 import React, { Component } from "react"
-import Navbar from "./Navbar"
-
-import "./Header.scss"
+import Blog from "./Blog"
+import "./Template.scss"
 
 const key = "38a03d93ba3e4e90330f9abbc73ce3b0"
 class Header extends Component {
@@ -75,41 +74,42 @@ class Header extends Component {
     ))
 
     return (
-      <div className="home">
-        <div className="home__navbar"></div>
-        <Navbar />
-        <div className="home__name">Przemysław Matkowski</div>
-        <div className="home__logo">
-          <img src="img/logo.svg" alt="" />
-        </div>
-        <div className="home__content">
-          <h1>Witam w moim Świecie</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-        </div>
-        <div className="home__rightbar ">
-          <div className="home__rightbar__weather">
-            <form onSubmit={this.getWeather}>
-              <input
-                type="text"
-                onChange={this.handleCityChange}
-                value={this.state.city}
-                placeholder="Wpisz maisto"
-              />
-              <button>Sprawdz pogode</button>
-            </form>
-            {weathers}
+      <>
+        <div className="home">
+          <div className="home__name">Przemysław Matkowski</div>
+          <div className="home__logo">
+            <img src="img/logo.svg" alt="" />
+          </div>
+          <div className="home__content">
+            <h1>Witam w moim Świecie</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+          </div>
+          <div className="home__rightbar ">
+            <div className="home__rightbar__weather">
+              <form onSubmit={this.getWeather}>
+                <input
+                  type="text"
+                  onChange={this.handleCityChange}
+                  value={this.state.city}
+                  placeholder="Wpisz maisto"
+                />
+                <button>Sprawdz pogode</button>
+              </form>
+              {weathers}
+            </div>
+          </div>
+          {/* <div className="home__bg"></div> */}
+          <div className="home__arrow">
+            <i className="fas fa-arrow-down"></i>
+          </div>
+          <div className="home__social">
+            <i className="fab fa-facebook-messenger"></i>
+            <i className="fab fa-instagram"></i>
+            <i className="fab fa-twitter"></i>
           </div>
         </div>
-        {/* <div className="home__bg"></div> */}
-        <div className="home__arrow">
-          <i className="fas fa-arrow-down"></i>
-        </div>
-        <div className="home__social">
-          <i className="fab fa-facebook-messenger"></i>
-          <i className="fab fa-instagram"></i>
-          <i className="fab fa-twitter"></i>
-        </div>
-      </div>
+        <Blog />
+      </>
     )
   }
 }
